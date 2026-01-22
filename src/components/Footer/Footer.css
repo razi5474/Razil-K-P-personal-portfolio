@@ -1,0 +1,35 @@
+.footer {
+    background: #0f172a;
+    /* Darker than card bg */
+    padding: 2rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+}
+
+.footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.footer-socials a {
+    color: #cbd5e1;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.footer-socials a:hover {
+    color: var(--primary-color);
+}
+
+.footer-copy {
+    color: #64748b;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-credit {
+    color: #475569;
+    font-size: 0.8rem;
+}
