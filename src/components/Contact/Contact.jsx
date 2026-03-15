@@ -69,7 +69,7 @@ const Contact = () => {
                         </div>
                     </div>
 
-                    <form className='contact-form' onSubmit={sendEmail}>
+                    <form ref={form} className='contact-form' onSubmit={sendEmail}>
                         <div className='form-group'>
                             <label htmlFor="name">Name</label>
                             <input type="text" id="name" name="user_name" placeholder="Your Name" required />

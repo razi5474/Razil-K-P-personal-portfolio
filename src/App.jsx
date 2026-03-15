@@ -8,10 +8,11 @@ import Education from './components/Education/Education';
 import Contact from './components/Contact/Contact';
 import About from './components/About/About';
 import Footer from './components/Footer/Footer';
+import SmoothScroll from './components/SmoothScroll';
 
 function App() {
     return (
-        <>
+        <SmoothScroll>
             <Navbar />
             <main>
                 <Hero />
@@ -23,7 +24,7 @@ function App() {
                 <Contact />
             </main>
             <Footer />
-        </>
+        </SmoothScroll>
     );
 }
 

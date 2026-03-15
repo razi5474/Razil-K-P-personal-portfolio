@@ -1,49 +1,158 @@
 .services-section {
-    background: #0f172a;
+    position: relative;
+    background: var(--bg-color);
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+.services-bg-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.services-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+    z-index: 1;
+}
+
+.section-subtitle {
+    color: var(--primary-light, #60a5fa);
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: -10px;
 }
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    position: relative;
+    z-index: 10;
 }
 
 .service-card {
-    background: var(--card-bg);
-    padding: 2.5rem;
-    border-radius: 12px;
-    text-align: center;
+    position: relative;
+    background: rgba(15, 23, 42, 0.6);
+    padding: 3rem 2.5rem;
+    border-radius: 24px;
+    text-align: left;
+    backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: all 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
+/* Hover effect on card */
 .service-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--primary-color);
-    background: rgba(30, 41, 59, 0.8);
+    transform: translateY(-10px);
 }
 
-.service-icon {
-    margin-bottom: 1.5rem;
-    display: inline-block;
-    padding: 15px;
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 50%;
-    transition: all 0.3s ease;
+.service-icon-wrapper {
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: rgba(59, 130, 246, 0.1);
+    border-radius: 20px;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    transition: all 0.4s ease;
+    position: relative;
+    z-index: 2;
 }
 
-.service-card:hover .service-icon {
-    transform: scale(1.1);
-    background: rgba(255, 255, 255, 0.1);
+.service-card:hover .service-icon-wrapper {
+    background: rgba(59, 130, 246, 0.2);
+    transform: scale(1.05) rotate(5deg);
+    border-color: rgba(59, 130, 246, 0.4);
+}
+
+.icon-gradient {
+    color: var(--primary-light, #60a5fa);
+    filter: drop-shadow(0 0 8px rgba(96, 165, 250, 0.6));
 }
 
 .service-title {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     margin-bottom: 1rem;
     color: #fff;
+    font-weight: 700;
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease;
+}
+
+.service-card:hover .service-title {
+    color: var(--primary-light, #60a5fa);
 }
 
 .service-desc {
     color: #94a3b8;
-    line-height: 1.6;
+    line-height: 1.7;
+    font-size: 1.05rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Premium styling wrappers */
+.card-border-gradient {
+    position: absolute;
+    inset: 0;
+    border-radius: 24px;
+    padding: 2px; /* thickness of the border */
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0.5;
+    transition: opacity 0.4s ease;
+}
+
+.service-card:hover .card-border-gradient {
+    opacity: 1;
+    background: linear-gradient(135deg, rgba(96, 165, 250, 0.5) 0%, rgba(255,255,255,0) 100%);
+}
+
+.card-glow {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+    top: -100px;
+    right: -100px;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+.service-card:hover .card-glow {
+    opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .service-card {
+        padding: 2rem 1.5rem;
+    }
 }

@@ -1,55 +1,46 @@
 import React from 'react';
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaWordpress, FaGitAlt, FaGithub } from 'react-icons/fa';
-import { SiMongodb, SiExpress } from 'react-icons/si';
+import { SiMongodb, SiExpress, SiTailwindcss, SiRedux, SiFirebase } from 'react-icons/si';
+import Marquee from "react-fast-marquee";
 import './Skills.css';
 
 const Skills = () => {
-    const categories = [
-        {
-            title: "Frontend",
-            skills: [
-                { name: "React.js", icon: <FaReact size={40} color="#61DAFB" /> },
-                { name: "HTML5", icon: <FaHtml5 size={40} color="#E34F26" /> },
-                { name: "CSS3", icon: <FaCss3Alt size={40} color="#1572B6" /> },
-                { name: "JavaScript", icon: <FaJs size={40} color="#F7DF1E" /> },
-            ]
-        },
-        {
-            title: "Backend",
-            skills: [
-                { name: "Node.js", icon: <FaNodeJs size={40} color="#339933" /> },
-                { name: "Express.js", icon: <SiExpress size={40} color="#000000" className="icon-white" /> },
-                { name: "MongoDB", icon: <SiMongodb size={40} color="#47A248" /> },
-            ]
-        },
-        {
-            title: "CMS & Tools",
-            skills: [
-                { name: "WordPress", icon: <FaWordpress size={40} color="#21759B" /> },
-                { name: "Git", icon: <FaGitAlt size={40} color="#F05032" /> },
-                { name: "GitHub", icon: <FaGithub size={40} color="#ffffff" /> },
-            ]
-        }
+    const allSkills = [
+        { name: "React.js", icon: <FaReact color="#61DAFB" /> },
+        { name: "HTML5", icon: <FaHtml5 color="#E34F26" /> },
+        { name: "CSS3", icon: <FaCss3Alt color="#1572B6" /> },
+        { name: "JavaScript", icon: <FaJs color="#F7DF1E" /> },
+        { name: "Node.js", icon: <FaNodeJs color="#339933" /> },
+        { name: "Express.js", icon: <SiExpress color="#ffffff" /> },
+        { name: "MongoDB", icon: <SiMongodb color="#47A248" /> },
+        { name: "Tailwind", icon: <SiTailwindcss color="#06B6D4" /> },
+        { name: "Redux", icon: <SiRedux color="#764ABC" /> },
+        { name: "WordPress", icon: <FaWordpress color="#21759B" /> },
+        { name: "Git", icon: <FaGitAlt color="#F05032" /> },
+        { name: "Firebase", icon: <SiFirebase color="#FFCA28" /> },
     ];
 
     return (
         <section className='skills-section' id='skills'>
             <div className='container'>
                 <h2 className='section-title'>Skills & Expertise</h2>
-                <div className='skills-grid'>
-                    {categories.map((cat, idx) => (
-                        <div key={idx} className='skills-category'>
-                            <h3 className='category-title'>{cat.title}</h3>
-                            <div className='skills-list'>
-                                {cat.skills.map((skill, index) => (
-                                    <div key={index} className='skill-card'>
-                                        <div className='skill-icon'>{skill.icon}</div>
-                                        <p className='skill-name'>{skill.name}</p>
-                                    </div>
-                                ))}
+                <div className='skills-marquee-container'>
+                    <Marquee gradient={true} gradientColor="rgba(3, 7, 18, 1)" speed={50} pauseOnHover={true}>
+                        {allSkills.map((skill, index) => (
+                            <div key={index} className='skill-marquee-item glass'>
+                                <div className='skill-icon'>{skill.icon}</div>
+                                <span className='skill-name'>{skill.name}</span>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </Marquee>
+                    <Marquee gradient={true} gradientColor="rgba(3, 7, 18, 1)" speed={40} direction='right' pauseOnHover={true} className='mt-4'>
+                        {allSkills.slice().reverse().map((skill, index) => (
+                            <div key={index} className='skill-marquee-item glass'>
+                                <div className='skill-icon'>{skill.icon}</div>
+                                <span className='skill-name'>{skill.name}</span>
+                            </div>
+                        ))}
+                    </Marquee>
                 </div>
             </div>
         </section>
