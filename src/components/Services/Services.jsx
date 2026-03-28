@@ -38,17 +38,20 @@ const Services = () => {
         {
             title: "MERN Stack Development",
             desc: "Building dynamic, single-page applications using MongoDB, Express, React, and Node.js. Scalable and efficient full-stack solutions.",
-            icon: <FaCode size={40} className="icon-gradient" />
+            icon: <FaCode size={40} className="icon-gradient" />,
+            link: "#projects"
         },
         {
             title: "WordPress Development",
             desc: "Custom theme development, plugin integration, and performance optimization. Creating manageable content sites tailored to your needs.",
-            icon: <FaWordpress size={40} className="icon-gradient" />
+            icon: <FaWordpress size={40} className="icon-gradient" />,
+            link: "#wordpress"
         },
         {
             title: "Responsive Web Design",
             desc: "Creating visually appealing and mobile-friendly websites that look great on any device, ensuring the best user experience.",
-            icon: <FaMobileAlt size={40} className="icon-gradient" />
+            icon: <FaMobileAlt size={40} className="icon-gradient" />,
+            link: "#projects" // Default to projects for now
         }
     ];
 
@@ -69,6 +72,13 @@ const Services = () => {
                             </div>
                             <h3 className='service-title'>{service.title}</h3>
                             <p className='service-desc'>{service.desc}</p>
+                            
+                            {service.link && (
+                                <a href={service.link} className='service-link'>
+                                    Explore Projects 
+                                    <span className="link-arrow">→</span>
+                                </a>
+                            )}
                             
                             {/* Decorative elements for premium feel */}
                             <div className="card-border-gradient"></div>

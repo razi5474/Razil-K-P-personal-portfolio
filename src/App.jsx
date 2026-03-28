@@ -3,6 +3,7 @@ import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
 import Skills from './components/Skills/Skills';
 import Projects from './components/Projects/Projects';
+import WordPressProjects from './components/WordPressProjects/WordPressProjects';
 import Services from './components/Services/Services';
 import Education from './components/Education/Education';
 import Contact from './components/Contact/Contact';
@@ -19,6 +20,7 @@ function App() {
                 <About />
                 <Skills />
                 <Projects />
+                <WordPressProjects />
                 <Services />
                 <Education />
                 <Contact />
