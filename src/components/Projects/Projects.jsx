@@ -11,6 +11,7 @@ import budgetImg from '../../assets/budget-tracker.png';
 import taskManagerImg from '../../assets/task-manager.png';
 import calculatorImg from '../../assets/calculater.png';
 import fatLossImg from '../../assets/fat-loss.png';
+import airJordanImg from '../../assets/air-jordan.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,6 +19,15 @@ const Projects = () => {
     const sectionRef = useRef();
 
     const projectList = [
+        {
+            title: "Air Jordan 1 Animation",
+            desc: "A premium product reveal experience with immersive scrollytelling, synchronized GSAP animations, and cinematic scroll-linked effects.",
+            tech: ["Next.js", "GSAP", "Tailwind CSS", "Canvas"],
+            github: "https://github.com/razi5474/air-Jordan-animation-website",
+            demo: "https://air-jordan-animation-website.vercel.app/",
+            image: airJordanImg,
+            featured: true
+        },
         {
             title: "Razkart E-commerce",
             desc: "A high-performance full-stack e-commerce solution featuring secure Stripe payments, a robust admin dashboard, and real-time order tracking.",
